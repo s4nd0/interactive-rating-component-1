@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <main id="form">
+    <span class="circle star"></span>
+
+    <h1>How did we do?</h1>
+    <p>Please let us know how we did with your support request. All feedback
+      is appreciated to help us improve our offering!
+    </p>
+
+
+    
+
+    
+
+    <div class="buttons">
+      <button id="btn1" class="button-circle" onclick="btn(1);">1</button>
+      <button id="btn2" class="button-circle" onclick="btn(2);">2</button>
+      <button id="btn3" class="button-circle" onclick="btn(3);">3</button>
+      <button id="btn4" class="button-circle" onclick="btn(4);">4</button>
+      <button id="btn5" class="button-circle" onclick="btn(5);">5</button>
+    </div>
+
+    <button class="submit" onclick="submit()">submit</button>
+  </main>
+
+  <script type="text/javascript">
+
+    var selectedOption = 0;
+
+    var btn1 = document.getElementById("btn1").style;
+    var btn2 = document.getElementById("btn2").style;
+    var btn3 = document.getElementById("btn3").style;
+    var btn4 = document.getElementById("btn4").style;
+    var btn5 = document.getElementById("btn5").style;
+
+    function btn(x)
+    {
+      btn1.backgroundColor = "hsl(213, 19%, 18%)";
+      btn1.color = "hsl(216, 12%, 54%)";
+      btn2.backgroundColor = "hsl(213, 19%, 18%)";
+      btn2.color = "hsl(216, 12%, 54%)";
+      btn3.backgroundColor = "hsl(213, 19%, 18%)";
+      btn3.color = "hsl(216, 12%, 54%)";
+      btn4.backgroundColor = "hsl(213, 19%, 18%)";
+      btn4.color = "hsl(216, 12%, 54%)";
+      btn5.backgroundColor = "hsl(213, 19%, 18%)";
+      btn5.color = "hsl(216, 12%, 54%)";
+
+      if(x == 1)
+      {
+        btn1.backgroundColor = "hsl(216, 12%, 54%)";
+        btn1.color = "white";
+        selectedOption = 1;
+      }
+      if(x == 2)
+      {
+        btn2.backgroundColor = "hsl(216, 12%, 54%)";
+        btn2.color = "white";
+        selectedOption = 2;
+      }
+      if(x == 3)
+      {
+        btn3.backgroundColor = "hsl(216, 12%, 54%)";
+        btn3.color = "white";
+        selectedOption = 3;
+      }
+      if(x == 4)
+      {
+        btn4.backgroundColor = "hsl(216, 12%, 54%)";
+        btn4.color = "white";
+        selectedOption = 4;
+      }
+      if(x == 5)
+      {
+        btn5.backgroundColor = "hsl(216, 12%, 54%)";
+        btn5.color = "white";
+        selectedOption = 5;
+      }
+    }
+
+    function submit()
+    {
+      var form = document.getElementById("form");
+      if(selectedOption != 0)
+      {
+        form.style.alignItems = "center";
+        form.style.textAlign = "center";
+
+        form.innerHTML = "<img src='./images/illustration-thank-you.svg'> <div id='selected-text'>You selected "
+          +selectedOption+" out of 5</div> <h1>Thank You!</h1> <p>We appreciate you taking time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>"
+
+        
+      }
+    }
+  </script>
+</body>
+</html>
